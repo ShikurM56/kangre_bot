@@ -6,7 +6,7 @@
 <xacro:include filename="$(find kangre_autonomo_description)/urdf/kangre_autonomo.gazebo" />
 <link name="base_link">
   <inertial>
-    <origin xyz="0.020465540808401114 1.2962818327265716e-05 0.0656689943374941" rpy="0 0 0"/>
+    <origin xyz="0.020465540808401114 1.2962818327265716e-05 0.0656689943374941" rpy="0 0 0.0"/>
     <mass value="1.2373061159976249"/>
     <inertia ixx="0.006438" iyy="0.008276" izz="0.011206" ixy="-2.9e-05" iyz="1e-05" ixz="-0.000628"/>
   </inertial>
@@ -111,19 +111,19 @@
 
 <link name="lidar_v1_1">
   <inertial>
-    <origin xyz="0.00036382402145790707 -0.0032365140144362914 0.01320002692671135" rpy="0 0 0"/>
+    <origin xyz="-0.00036382402145790707 0.0032365140144362914 0.01320002692671135" rpy="0.0 0.0 0.0"/>
     <mass value="0.010966232720504534"/>
     <inertia ixx="5e-06" iyy="5e-06" izz="1e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.010825 -0.000463 -0.152997" rpy="0 0 0"/>
+    <origin xyz="-0.010825 -0.000463 -0.152997" rpy="0.0 0 0.0"/>
     <geometry>
       <mesh filename="package://kangre_autonomo_description/meshes/lidar_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="-0.010825 -0.000463 -0.152997" rpy="0 0 0"/>
+    <origin xyz="-0.010825 -0.000463 -0.152997" rpy="0.0 0 0.0"/>
     <geometry>
       <mesh filename="package://kangre_autonomo_description/meshes/lidar_v1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -157,7 +157,7 @@
 </joint>
 
 <joint name="Rigid11" type="fixed">
-  <origin xyz="0.010825 0.000463 0.152997" rpy="0 0 0"/>
+  <origin xyz="0.010825 0.000463 0.152997" rpy="0 0 3.14"/>
   <parent link="base_link"/>
   <child link="lidar_v1_1"/>
 </joint>

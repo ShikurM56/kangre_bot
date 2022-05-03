@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<launch>
+	
+	<param command="$(find xacro)/xacro $(find kangre_autonomo_description)/urdf/kangre_autonomo.xacro" name="robot_description"/>
+	
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+	
+	<node name="simple_drive" pkg="kangre_firmware" type="simple_drive.py" output="screen"/>
+	
+	<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+	
+	<!-- <include file="$(find usb_cam)/launch/usb_cam-test.launch" /> -->
+
+
+</launch>

@@ -4,11 +4,11 @@
 	
 	<!-- Start Google Cartographer node with custom configuration file-->
 	<node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args=" 
-		-configuration_directory $(find kangre_cartographer)/config 
+		-configuration_directory $(find kangre_firmware)/config 
 		-configuration_basename lidar.lua" 
 	      output="screen">
 	</node>
 	
+	<node name="odom_publisher" pkg="kangre_firmware" type="odom_pub.py" output="screen"/>
 
-    
 </launch>
