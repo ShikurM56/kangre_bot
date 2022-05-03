@@ -12,7 +12,6 @@ catkin_make
 ## Install all the dependences
 ```
 sudo apt-get install ros-melodic-gmapping
-sudo apt-get install ros-melodic-map-server
 sudo apt-get install ros-melodic-cartographer-ros
 sudo apt-get install ros-melodic-map-server
 sudo apt-get install ros-melodic-move-base
@@ -23,13 +22,17 @@ sudo apt-get install ros-melodic-dwa-local-planner
 ```
 roslaunch kangre_firmware bringup.launch
 roslaunch kangre_firmware server_bringup.launch
-roslaunch kangre_slam kangre_slam.launch
 roslaunch kangre_visualization display.launch
 ```
 
-### Run the gmapping node:
+### Running the gmapping node:
 ```
 rosrun gmapping slam_gmapping scan:=scan
+```
+
+### Running the cartographer node:
+```
+roslaunch slam_gmapping cartographer_map.launch
 ```
 
 ### Save the map:
