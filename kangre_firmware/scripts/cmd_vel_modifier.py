@@ -14,8 +14,8 @@ def callback(msg):
     pub = rospy.Publisher('cmd_vel_2', Twist, queue_size=10)
 
     newTwist = Twist()
-    newTwist.linear.x = 2*msg.linear.x
-    newTwist.angular.z = msg.angular.z
+    newTwist.linear.x = 3*msg.linear.x
+    newTwist.angular.z = msg.angular.z/2
     pub.publish(newTwist)
 
 if __name__ == '__main__':

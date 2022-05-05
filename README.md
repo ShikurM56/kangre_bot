@@ -19,30 +19,43 @@ sudo apt-get install ros-melodic-dwa-local-planner
 ```
 
 ## For mapping:
+
+### Kangre_bot:
 ```
 roslaunch kangre_firmware bringup.launch
 roslaunch kangre_firmware server_bringup.launch
+```
+
+### Laptop:
+```
 roslaunch kangre_visualization display.launch
 ```
 
-### Running the gmapping node:
+#### Running the gmapping node:
 ```
 rosrun gmapping slam_gmapping scan:=scan
 ```
 
-### Running the cartographer node:
+#### Running the cartographer node:
 ```
-roslaunch slam_gmapping cartographer_map.launch
+roslaunch kangre_slam kangre_slam.launch
 ```
 
-### Save the map:
+#### Save the map:
 ```
-rosrun map_server map_saver -f ~/catkin_ws/src/kangre_navigation/maps/map_name
+rosrun map_server map_saver -f map_name
 ```
 
 ## For navigation:
+
+### Kangre_bot:
 ```
-roslaunch kangre_autonomo_description gazebo.launch
-roslaunch kangre_cartographer server_bringup.launch
-roslaunch kangre_navigation kangre_sim_navigation.launch
+roslaunch kangre_firmware bringup.launch
+roslaunch kangre_firmware server_bringup.launch
+roslaunch kangre_navigation kangre_navigation.launch
+```
+
+### Laptop:
+```
+kangre_visualization kangre_navigation.launch
 ```

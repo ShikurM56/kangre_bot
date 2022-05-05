@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+	<!-- Map Publishing Node -->
+    <!--<node name="cartographer_occupancy_grid_node" pkg="cartographer_ros" type="cartographer_occupancy_grid_node" args="-resolution 0.01" />-->
+
+
+ <!-- rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find kangre_navigation)/rviz/kangre_navigation.rviz"/>
+</launch>
+
+
+
