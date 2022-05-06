@@ -18,17 +18,18 @@ sudo apt-get install ros-melodic-move-base
 sudo apt-get install ros-melodic-dwa-local-planner
 ```
 
+## Connecting to Kangre Bot
+```
+ssh qbit@192.168.0.100
+root
+```
+
 ## For mapping:
 
 ### Kangre_bot:
 ```
 roslaunch kangre_firmware bringup.launch
 roslaunch kangre_firmware server_bringup.launch
-```
-
-### Laptop:
-```
-roslaunch kangre_visualization display.launch
 ```
 
 #### Running the gmapping node:
@@ -38,7 +39,12 @@ rosrun gmapping slam_gmapping scan:=scan
 
 #### Running the cartographer node:
 ```
-roslaunch kangre_slam kangre_slam.launch
+roslaunch kangre_slam cartographer_map.launch
+```
+
+#### Laptop:
+```
+roslaunch kangre_visualization display.launch
 ```
 
 #### Save the map:

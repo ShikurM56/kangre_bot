@@ -7,7 +7,7 @@ from geometry_msgs.msg import Twist
 def callback(data):
     right = data.linear.x + data.angular.z
     left = data.linear.x - data.angular.z
-    map_right = (right - -1) * (127 - -127) / (1 - -1) - 127
+    map_right = (right - -1) * (121 - -121) / (1 - -1) - 121
     map_left = (left - -1) * (127 - -127) / (1 - -1) - 127
     print (map_right)
     print (map_left)
